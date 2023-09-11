@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeHarmony.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Label
+                Text="LIFE HARMONY"
+                HorizontalOptions="Center"
+                FontSize="Large"
+                FontFamily="Arial"
+            />
+            <Image
+                Source="page.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Nombre Dieta" FontAttributes="Bold" />
+                <Label Grid.Column="1" Text="Recomendacion" FontAttributes="Bold" />
+            </Grid>
+            <CollectionView x:Name="PlanAlimentacionCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="*"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="{Binding nombre}" />
+                            <Label Grid.Column="1" Text="{Binding recomendacion}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
